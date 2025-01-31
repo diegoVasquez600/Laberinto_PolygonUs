@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class MazeExit : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    public GameOverManager gameOverManager;
+
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collision detected with: " + other.gameObject.name);
+
         if (other.CompareTag("Player"))
         {
-            Debug.Log("You Win!");
+            Debug.Log("Player reached the exit!");
+            gameOverManager.ShowGameOver();
         }
     }
 }
