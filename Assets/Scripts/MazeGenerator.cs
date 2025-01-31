@@ -11,12 +11,12 @@ public class MazeGenerator : MonoBehaviour
     public Transform mazeParent;
 
     private int[,] maze;
-    private List<Vector2Int> directions = new List<Vector2Int>
+    private List<Vector2Int> directions = new()
     {
-        new Vector2Int(0, 1),  // Up
-        new Vector2Int(1, 0),  // Right
-        new Vector2Int(0, -1), // Down
-        new Vector2Int(-1, 0)  // Left
+        new(0, 1),  // Up
+        new(1, 0),  // Right
+        new(0, -1), // Down
+        new(-1, 0)  // Left
     };
 
     void Start()
